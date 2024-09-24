@@ -1,0 +1,19 @@
+<div *ngIf="playstations.length > 0" class="playstations-grid">
+  <div *ngFor="let playstation of playstations" class="card">
+    <!-- Display the PlayStation image -->
+    <img [src]="playstation.playstation_image" class="card-img-top" alt="{{ playstation.playstation_Name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ playstation.playstation_Name }}</h5>
+
+      <!-- Conditionally display the accessories component -->
+      <app-pc-accessories *ngIf="playstation.accessoriesType === 'pc'"></app-pc-accessories>
+      <app-ps4-accessories *ngIf="playstation.accessoriesType === 'ps4'"></app-ps4-accessories>
+      <app-ps5-accessories *ngIf="playstation.accessoriesType === 'ps5'"></app-ps5-accessories>
+      <app-psvr-accessories *ngIf="playstation.accessoriesType === 'psvr'"></app-psvr-accessories>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="error">
+  <p>Error: {{ error }}</p>
+</div>

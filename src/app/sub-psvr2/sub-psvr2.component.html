@@ -1,0 +1,9 @@
+<!-- sub-psvr2.component.html -->
+
+<div class="slides-container">
+  <div *ngFor="let slide of slides; let i = index" 
+       [class.active]="isSlideActive(i)" 
+       class="slide"
+       [ngStyle]="{ 'background-image': 'url(' + slide.imageUrl + ')' }">
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+    <!-- Shipping Details -->
+    <h1>
+      <i class="fas fa-shipping-fast"></i>
+      Shipping Details
+    </h1>
+    <div class="name">
+      <div>
+        <label for="f-name">First</label>
+        <input id="f-name" formControlName="firstName" placeholder="First Name">
+        <div *ngIf="addressForm.get('firstName')?.invalid && addressForm.get('firstName')?.touched">
+          First name is required
+        </div>
+      </div>
+      <div>
+        <label for="l-name">Last</label>
+        <input id="l-name" formControlName="lastName" placeholder="Last Name">
+        <div *ngIf="addressForm.get('lastName')?.invalid && addressForm.get('lastName')?.touched">
+          Last name is required
+        </div>
+      </div>
+    </div>
+    <div class="street">
+      <label for="address">Street</label>
+      <input id="address" formControlName="street" placeholder="Street Address">
+      <div *ngIf="addressForm.get('street')?.invalid && addressForm.get('street')?.touched">
+        Street is required
+      </div>
+    </div>
+    <div class="address-info">
+      <div>
+        <label for="city">City</label>
+        <input id="city" formControlName="city" placeholder="City">
+        <div *ngIf="addressForm.get('city')?.invalid && addressForm.get('city')?.touched">
+          City is required
+        </div>
+      </div>
+      <div>
+        <label for="state">State</label>
+        <input id="state" formControlName="state" placeholder="State">
+        <div *ngIf="addressForm.get('state')?.invalid && addressForm.get('state')?.touched">
+          State is required
+        </div>
+      </div>
+      <div>
+        <label for="zip">Zip</label>
+        <input id="zip" formControlName="zip" placeholder="Zip Code">
+        <div *ngIf="addressForm.get('zip')?.invalid && addressForm.get('zip')?.touched">
+          <div *ngIf="addressForm.get('zip')?.errors?.['required']">
+            Zip code is required
+          </div>
+          <div *ngIf="addressForm.get('zip')?.errors?.['pattern']">
+            Zip code should be 6 digits
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="btns">
+      <button type="submit" [disabled]="addressForm.invalid">Pay Now</button>
+    </div>
+  </form>
+  

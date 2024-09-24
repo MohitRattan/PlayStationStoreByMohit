@@ -1,0 +1,59 @@
+<section id="jetstream-tertiary-nav">
+  <div class="tertiary-container psw-light-theme">
+    <div class="tertiary-container-inner">
+      <!-- Insert logo -->
+      <div class="logo-container">
+        <img src="/images/ps_logo.PNG" alt="Logo" class="logo-image">
+      </div>
+
+      <div class="tertiary-carousels centered">
+        <ul class="carousel-tertiary-tabs" id="tertiary-menu-toggle">
+          <li class="tertiary-tab">
+            <a aria-label="" class="web-store-tab tertiary-tab__link tertiary-tab__link--active"
+              routerLink="/latest">Latest</a>
+          </li>
+          <li class="tertiary-tab">
+            <a aria-label="" class="web-store-tab tertiary-tab__link" routerLink="/allgames">Collections</a>
+          </li>
+          <li class="tertiary-tab">
+            <a aria-label="" class="web-store-tab tertiary-tab__link" routerLink="/games">Fun Zone</a>
+          </li>
+          <li class="tertiary-tab">
+            <a aria-label="" class="web-store-tab tertiary-tab__link"
+              routerLink="/profile">Profile</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" aria-label="Cart">
+              <i class="material-icons">shopping_cart</i> <!-- Using Material Icons for cart -->
+            </a>
+          </li>
+          <ng-container *ngIf="authService.isLoggedIn(); else notLoggedIn">
+            <li class="nav-item d-flex ">
+              <img *ngIf="getProfilePictureUrl()" [src]="getProfilePictureUrl()" alt="Profile Picture"
+                class="profile-picture" />  
+              <span *ngIf="!getProfilePictureUrl()">No Profile Picture</span>
+              <span class="nav-link">Hi, {{ authService.getUsername() }}</span>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+            </li>
+          </ng-container>
+
+          <ng-template #notLoggedIn>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup">Signup</a>
+            </li>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <app-carousel></app-carousel>
+<app-content-grid-console></app-content-grid-console> -->
+<!-- <app-sub-psvr2></app-sub-psvr2> -->

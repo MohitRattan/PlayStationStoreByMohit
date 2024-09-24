@@ -1,0 +1,13 @@
+<div class="game-container">
+    <div class="paddle" [style.left.px]="paddleX"></div>
+    <div
+      *ngFor="let ball of balls"
+      class="ball"
+      [style.top.px]="ball.y"
+      [style.left.px]="ball.x"
+      [style.width.px]="ball.size"
+      [style.height.px]="ball.size"
+    ></div>
+    <div class="scoreboard">Score: {{ score }}</div>
+  </div>
+  

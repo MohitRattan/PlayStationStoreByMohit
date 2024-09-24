@@ -1,0 +1,17 @@
+.header {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky; /* Stick the header to the top */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  /* Optional: Adjust styling to fit with the sticky header */
+  .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,34 @@
+<div *ngIf="games.length > 0">
+    <div class="card">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + games[currentIndex].game_Url + ')'}"></div>
+      <div class="card-content">
+        <div data-mfe-name="gameTitle" class="psw-root psw-dark-theme" data-initial="env:bc0e5ee0-74d1-11ef-bb7c-45be1aba30ed">
+            <div class="psw-c-bg-0" data-qa="mfe-game-title">
+              <h1 class="psw-m-b-5 psw-t-title-l psw-t-size-8 psw-l-line-break-word" data-qa="mfe-game-title#name">Dead Rising Deluxe Remaster</h1>
+              <div class="psw-t-overline psw-t-bold" data-qa="mfe-game-title#publisher">CE EUROPE LIMITED</div>
+              <div class="psw-t-overline psw-t-bold psw-m-t-3" data-qa="mfe-game-title#release-date">19/9/2024 12:00 AM GMT+5:30</div>
+              <div class="psw-l-space-x-2 psw-l-line-left psw-m-t-4">
+                <span data-qa="mfe-game-title#productTag0" class="psw-p-x-2 psw-p-y-1 psw-t-tag">PS5</span>
+                <span data-qa="mfe-game-title#productTag1" class="psw-p-x-2 psw-p-y-1 psw-t-tag">Standard</span>
+              </div>
+              <div class="psw-m-t-4"></div>
+            </div>
+          </div>
+        <h2 class="game-name">{{ games[currentIndex].game_Name.trim() }}</h2>
+        <p class="game-price">{{ games[currentIndex].game_Price | currency }}</p>
+        <button (click)="addToCart(games[currentIndex])" class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+      
+<!--   
+    <div class="navigation">
+      <button (click)="previousGame()" [disabled]="currentIndex === 0">Previous</button>
+      <button (click)="nextGame()" [disabled]="currentIndex === games.length - 1">Next</button>
+    </div>
+  </div>
+   -->
+  <div *ngIf="games.length === 0">
+    <p>No games available.</p>
+  </div>
+  

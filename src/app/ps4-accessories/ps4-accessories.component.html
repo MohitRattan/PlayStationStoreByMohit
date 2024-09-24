@@ -1,0 +1,9 @@
+<div class="accessories-grid">
+    <div *ngFor="let accessory of accessoriesList" class="accessory-card">
+      <h3>{{ accessory.name }}</h3>
+      <div class="controller-image">
+        <img [src]="accessory.controller">
+      </div>
+    </div>
+  </div>
+  

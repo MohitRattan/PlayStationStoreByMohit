@@ -1,0 +1,17 @@
+<app-clicker-game></app-clicker-game>
+<app-content-grid-console></app-content-grid-console>
+<div *ngIf="isLoading">Loading points data...</div>
+
+<div *ngIf="!isLoading && pointsData.length === 0">
+  No points data available. Please log in to see your points.
+</div>
+
+<ul *ngIf="!isLoading && pointsData.length > 0">
+  <li *ngFor="let point of pointsData">
+    <p>User ID: {{ point.userId }}</p>
+    <p>Points: {{ point.points }}</p>
+    <p>Date Recorded: {{ point.dateRecorded }}</p>
+  </li>
+</ul>
+
+<div *ngIf="!isLoading && errorMessage">{{ errorMessage }}</div>

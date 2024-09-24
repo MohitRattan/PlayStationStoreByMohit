@@ -1,0 +1,50 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+  <!-- Existing fields -->
+  <div class="form-group">
+    <label for="user_name">Username:</label>
+    <input id="user_name" formControlName="user_name" type="text" class="form-control" />
+    <div *ngIf="signupForm.get('user_name')?.invalid && (signupForm.get('user_name')?.touched || signupForm.get('user_name')?.dirty)">
+      <small class="text-danger" *ngIf="signupForm.get('user_name')?.errors?.['required']">Username is required.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="user_email">Email:</label>
+    <input id="user_email" formControlName="user_email" type="email" class="form-control" />
+    <div *ngIf="signupForm.get('user_email')?.invalid && (signupForm.get('user_email')?.touched || signupForm.get('user_email')?.dirty)">
+      <small class="text-danger" *ngIf="signupForm.get('user_email')?.errors?.['required']">Email is required.</small>
+      <small class="text-danger" *ngIf="signupForm.get('user_email')?.errors?.['email']">Invalid email format.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="user_password">Password:</label>
+    <input id="user_password" formControlName="user_password" type="password" class="form-control" />
+    <div *ngIf="signupForm.get('user_password')?.invalid && (signupForm.get('user_password')?.touched || signupForm.get('user_password')?.dirty)">
+      <small class="text-danger" *ngIf="signupForm.get('user_password')?.errors?.['required']">Password is required.</small>
+      <small class="text-danger" *ngIf="signupForm.get('user_password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="confirmpassword">Confirm Password:</label>
+    <input id="confirmpassword" formControlName="confirmpassword" type="password" class="form-control" />
+    <div *ngIf="signupForm.hasError('mismatch') && (signupForm.get('confirmpassword')?.touched || signupForm.get('confirmpassword')?.dirty)">
+      <small class="text-danger">Passwords do not match.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="profile_image">Profile Image:</label>
+    <input type="file" id="profile_image" (change)="onFileChange($event)" class="form-control" />
+    <div *ngIf="signupForm.get('profile_image')?.invalid && (signupForm.get('profile_image')?.touched || signupForm.get('profile_image')?.dirty)">
+      <small class="text-danger">Profile image is required.</small>
+    </div>
+  </div>
+
+  <div class="img-preview-container" *ngIf="base64Image">
+    <img [src]="base64Image" alt="Profile Preview" />
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+</form>

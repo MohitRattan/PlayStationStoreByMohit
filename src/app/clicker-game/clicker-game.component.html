@@ -1,0 +1,12 @@
+<div class="game-container" *ngIf="!gameActive">
+    <h2>Clicker Game</h2>
+    <p>Click the button as fast as you can before time runs out!</p>
+    <button (click)="startGame()">Start Game</button>
+  </div>
+  
+  <div class="game-container" *ngIf="gameActive">
+    <h2>Time Left: {{ timeLeft }}s</h2>
+    <h3>Score: {{ score }}</h3>
+    <button (click)="clickButton()">Click Me!</button>
+  </div>
+  

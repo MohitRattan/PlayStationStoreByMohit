@@ -1,0 +1,49 @@
+/* Container styling for the media block */
+.media-block__inner {
+    /* Add padding or margins if necessary */
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling for the figure element */
+.media-block__figure {
+    /* Ensure the figure takes up the available space */
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+
+
+/* Styling for the picture element */
+.media-block__img {
+    /* Ensure the image fits within its container */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Additional styling for lazy-loaded images */
+.lozad {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* When the image is loaded */
+.lazy-loaded {
+    opacity: 1;
+}
+
+/* Style for noscript fallback images */
+noscript img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ensure default image does not show until loaded */
+img[alt] {
+    display: block;
+    width: 100%;
+    height: auto;
+}

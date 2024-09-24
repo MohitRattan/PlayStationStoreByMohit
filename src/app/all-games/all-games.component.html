@@ -1,0 +1,28 @@
+<h1>All Games</h1>
+
+<!-- Games Grid -->
+<div class="games-grid">
+  <div *ngFor="let game of displayedGames" class="game-card">
+    <mat-card>
+      <mat-card-content>
+        <img [src]="game.game_Url" [alt]="game.game_Name" class="game-image" />
+        <mat-card-title>{{ game.game_Name }}</mat-card-title>
+        <p class="game-price">Price: {{ game.game_Price | currency:'INR':'symbol' }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click)="addToLibrary(game)">
+          Add to Library
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Pagination Controls -->
+<mat-paginator
+  [length]="totalGames"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[12, 24, 48]"
+  (page)="onPageChange($event)"
+  showFirstLastButtons>
+</mat-paginator>

@@ -1,0 +1,17 @@
+/* cart.component.css */
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cart-item {
+  width: 100%;
+  max-width: 300px;
+}
+
+.no-items {
+  text-align: center;
+  padding: 16px;
+  font-size: 18px;
+}

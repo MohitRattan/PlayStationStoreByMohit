@@ -1,0 +1,11 @@
+<div class="image-container">
+    <img [src]="selectedImage" alt="Selected Image" class="main-image" />
+    <div class="overlay">
+    </div>
+</div>
+
+<div class="photo-slider">
+    <div *ngFor="let photo of photos" class="photo-item">
+        <img [src]="photo" (click)="updateSelectedImage(photo)" alt="Photo" />
+    </div>
+</div>

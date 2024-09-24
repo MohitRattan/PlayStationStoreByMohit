@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1280px; /* Pushes nav items to the right */
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Cart Icon Styles */
+.nav-item .fas.fa-shopping-cart {
+  font-size: 1.5rem; /* Adjust size of the cart icon */
+  color: #fff; /* Change this to match the theme */
+  position: absolute;
+  right: 20px; /* Adjust the distance from the right corner */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+/* Tertiary Nav Styles */
+#jetstream-tertiary-nav {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tertiary-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-image {
+  width: 200px;
+}
+
+/* Carousel Button Styles */
+.carousel__button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel__overlay {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel__overlay--prev {
+  left: 0;
+}
+
+.carousel__overlay--next {
+  right: 0;
+}
+
+.carousel__button--prev::before {
+  content: '←';
+}
+
+.carousel__button--next::before {
+  content: '→';
+}
+
+.carousel-tertiary-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.tertiary-tab {
+  margin: 0 10px;
+}
+
+.tertiary-tab__link {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.tertiary-tab__link--active {
+  font-weight: bold;
+}
+
+/* Slide Styles */
+.slides-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.active {
+  display: block;
+}

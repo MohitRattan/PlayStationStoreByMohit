@@ -1,0 +1,63 @@
+<ng-container *ngIf="games.length != 0">
+    <div class="card-container">
+      <div [@cardAnimation]="showAddressForm ? 'move-center' : 'center'" class="card card-table">
+        <div class="card-order">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let game of games; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ game.game_Name }}</td>
+                <td><img style="width: 120px;" [src]="game.game_Url" alt=""></td>
+                <td>{{ game.game_price }}</td>
+                <td>{{ game.quantity }}</td>
+                <td>{{ game.total }}</td>
+                <td>
+                  <button (click)="editGame(game)" class="btn btn-info"><i class="fas fa-edit"></i> Edit</button>
+                  <button (click)="removeGame(game)" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="total-price">
+            <h3>Total Price: ₹{{ grandTotal }}</h3>
+          </div>
+          <div class="pay-now">
+            <!-- <button (click)="payNow()" class="btn btn-success" routerLink="/paynow">Pay Now</button> -->
+            <app-paynow></app-paynow>
+          </div>
+        </div>
+      </div>
+<!--   
+      <div *ngIf="showAddressForm" class="card card-table">
+        <app-address-form></app-address-form>
+      </div> -->
+    </div>
+  </ng-container>
+  
+  <ng-container *ngIf="games.length == 0">
+    <div class="container">
+      <div class="card">
+        <h5 class="card-title">My Cart</h5>
+      </div>
+      <div class="center">
+        <img
+          src="https://rukminim2.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+          alt="Your Cart is Empty">
+        <h4>Your Cart is Empty</h4>
+        <h6>Add item to it now</h6>
+        <button routerLink="/allgames" class="btn btn-primary">Shop Now</button>
+      </div>
+    </div>
+  </ng-container>
+  

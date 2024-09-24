@@ -1,0 +1,212 @@
+
+
+/* General section styling */
+.ems-sdk-collection {
+    padding: 20px;
+}
+
+/* Grid list container */
+.psw-preview-grid-list {
+    display: flex;
+    justify-content: center;
+}
+
+/* Unordered list for grid items */
+.psw-l-line-center.psw-preview-size-m.psw-grid-list.psw-l-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Individual grid item */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Anchor link in grid item */
+.psw-link.psw-content-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Grid item content wrapper */
+.psw-l-line-center.psw-ally-indicator.psw-b-0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media frame (image container) */
+.psw-media-frame.psw-fill-x.psw-image.psw-media.psw-media-interactive.psw-r-2.psw-aspect-1-1 {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.psw-media-frame:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+}
+
+/* Thumbnail image (fading out) */
+.psw-fade-out {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Main image (fading in) */
+.psw-fade-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect to swap images */
+.psw-media-frame:hover .psw-fade-out {
+    opacity: 0;
+}
+
+.psw-media-frame:hover .psw-fade-in {
+    opacity: 1;
+}
+
+/* Show More button */
+.psw-button {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.psw-button:hover {
+    background-color: #e5e5e5;
+}
+
+.psw-t-align-c {
+    text-align: center;
+}
+
+.psw-t-button {
+    font-size: 14px;
+}
+
+.psw-button-sizing--medium {
+    font-size: 16px;
+    padding: 12px 24px;
+}
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .game-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 220px;
+  }
+  
+  .game-card img {
+    border-radius: 8px;
+  }
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px 40px; /* Add some padding to avoid arrow overlapping content */
+}
+
+.carousel {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.carousel img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.carousel-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    font-size: 20px;
+}
+
+.arrow.left {
+    left: 10px; /* Keep it fixed near the left edge */
+}
+
+.arrow.right {
+    right: 10px; /* Keep it fixed near the right edge */
+}
+
+.arrow:focus {
+    outline: none;
+}
+.view-all-button {
+    width: 250px;
+    height: 250px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: 1px solid blue;
+  }
+  
+  .view-all-button:hover {
+    background-color: #ddd;
+  }
+  
+  .view-all-button:focus {
+    outline: none;
+  }
+  
